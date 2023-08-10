@@ -1,5 +1,5 @@
 # Latex Renderer
-This is a [BetterDiscord](https://betterdiscord.app/) plugin using [MathJax](https://www.mathjax.org/) to render LaTeX math equations.
+This is a [BetterDiscord](https://betterdiscord.app/) plugin using [MathJax](https://www.mathjax.org/) to natively render LaTeX math equations.
 
 # Usage
 You need to use simple or double dollars inside a discord inline code (this is to prevent markdown interpretation of special characters).
