@@ -3,11 +3,12 @@ This is a [BetterDiscord](https://betterdiscord.app/) plugin using [MathJax](htt
 
 # Usage
 You need to use simple or double dollars inside a Discord inline code (this is to prevent markdown interpretation of special characters).
-Examples (just copy-paste):
+
+Examples (just copy-paste)
 - Inline: `` I want to say `$\forall x\in\mathbb{N}, x\ge 0$` ! ``
 - Block: `` Voilà: `$$\int_0^\infty e^{-x^2}dx=\frac{\sqrt{\pi}}{2}$$` ``
 
 # Installation
 Until [bundling bug](https://github.com/mathjax/MathJax/issues/3079) is fixed, you can manually download the plugin here [src/LaTeX-remote.plugin.js](src/LaTeX-remote.plugin.js).
 
-Just put it in BetterDiscord's plugin folder.
+Simply put it in BetterDiscord's plugin folder.
