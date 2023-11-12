@@ -1,0 +1,31 @@
+{
+  "name": "discord_latex",
+  "pretty-name": "LaTeX Renderer",
+  "author": "QuantumSoul",
+  "description": "Renders LaTeX equations using MathJax",
+  "keywords": ["LaTeX","MathJax","Better","Discord"],
+  "version": "1.0.0",
+
+  "main": "./src/LaTeX.js",
+  "scripts": {
+    "build": "webpack --progress --color"
+  },
+
+  "license": "Apache-2.0",
+  "dependencies": {
+    "mathjax-full": "^3.2.2",
+    "webpack": "^5.88.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BinaryQuantumSoul/discord-latex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BinaryQuantumSoul/discord-latex/issues"
+  },
+  "homepage": "https://github.com/BinaryQuantumSoul/discord-latex#readme"
+}

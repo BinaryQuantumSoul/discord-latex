@@ -9,6 +9,11 @@ Examples (just copy-paste)
 - Block: `` Voilà: `$$\int_0^\infty e^{-x^2}dx=\frac{\sqrt{\pi}}{2}$$` ``
 
 # Installation
+## Remote version
 Until [bundling bug](https://github.com/mathjax/MathJax/issues/3079) is fixed, you can manually download the plugin here [src/LaTeX-remote.plugin.js](src/LaTeX-remote.plugin.js).
 
 Simply put it in BetterDiscord's plugin folder.
+
+## Building local version
+Run `npm install` and `npm run build`
+Then put `dist/LaTeX.plugin.js` in BetterDiscord's plugin folder.
