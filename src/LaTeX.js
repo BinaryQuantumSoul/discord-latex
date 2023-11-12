@@ -1,4 +1,7 @@
-MathJax={tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]}};
+MathJax={
+  tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]},
+  chtml:{fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}
+};
 localStorage={getItem(){},setItem(){},removeItem(){}};
 require('mathjax-full/es5/tex-chtml-full');
 
