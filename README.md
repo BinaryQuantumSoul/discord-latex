@@ -16,4 +16,5 @@ Simply put it in BetterDiscord's plugin folder.
 
 ## Building local version
 Run `npm install` and `npm run build`
+
 Then put `dist/LaTeX.plugin.js` in BetterDiscord's plugin folder.
