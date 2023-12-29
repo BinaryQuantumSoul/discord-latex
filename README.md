@@ -11,7 +11,7 @@ Examples (just copy-paste)
 # Installation
 You can manually download the plugin here
 - Remote: [src/LaTeX-remote.plugin.js](src/LaTeX-remote.plugin.js) 
-- Bundled: [dist/LaTeX.plugin.js](dist/LaTeX.plugin.js)
+- Bundled (bugged, use the other one): [dist/LaTeX.plugin.js](dist/LaTeX.plugin.js)
 
 Simply put it in BetterDiscord's plugin folder
 
