@@ -1,8 +1,8 @@
-MathJax={
+window.MathJax={
   tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]},
   chtml:{fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}
 };
-localStorage={getItem(){},setItem(){},removeItem(){}};
+window.localStorage={getItem(){},setItem(){},removeItem(){}};
 require('mathjax-full/es5/tex-chtml-full');
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];
@@ -20,6 +20,14 @@ export default class Plugin {
     if (this.observer) this.observer.disconnect();
   }
 
+  typeset() {
+    try {
+      MathJax.typeset();
+    } catch (error) {
+      if (!(error instanceof TypeError) && !(error instanceof ReferenceError)) throw error;
+    }
+  }
+
   onSwitch() {
     if (this.observer) this.observer.disconnect();
     else this.observer = new MutationObserver(this.handleMutations);
@@ -27,13 +35,9 @@ export default class Plugin {
     //format existing messages and listen to new ones
     const channels = document.querySelector("." + CLASS_SCROLLER_INNER);
     if (channels) {
-      //existing one
+      //existing ones
       channels.querySelectorAll("." + CLASS_MESSAGE_CONTENT).forEach(this.parseMessage);
-      try {
-        MathJax.typeset();
-      } catch (error) {
-        if (!(error instanceof TypeError)) throw error;
-      }
+      this.typeset();
 
       //new ones
       this.observer.observe(channels, {
@@ -76,7 +80,7 @@ export default class Plugin {
   };
 
   formatMessage(messageContent) {
-    if (this.parseMessage(messageContent)) MathJax.typeset();
+    if (this.parseMessage(messageContent)) this.typeset();
   }
 
   parseMessage(messageContent) {

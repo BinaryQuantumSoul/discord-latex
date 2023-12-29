@@ -2,7 +2,7 @@
  * @name LaTeX Renderer
  * @author QuantumSoul
  * @description Renders LaTeX equations using MathJax
- * @version 1.0.0
+ * @version 1.0.1
  */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
@@ -117,11 +117,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Plugin)
 /* harmony export */ });
-MathJax={
+window.MathJax={
   tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]},
   chtml:{fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}
 };
-localStorage={getItem(){},setItem(){},removeItem(){}};
+window.localStorage={getItem(){},setItem(){},removeItem(){}};
 __webpack_require__(/*! mathjax-full/es5/tex-chtml-full */ "./node_modules/mathjax-full/es5/tex-chtml-full.js");
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];
@@ -139,6 +139,14 @@ class Plugin {
     if (this.observer) this.observer.disconnect();
   }
 
+  typeset() {
+    try {
+      MathJax.typeset();
+    } catch (error) {
+      if (!(error instanceof TypeError) && !(error instanceof ReferenceError)) throw error;
+    }
+  }
+
   onSwitch() {
     if (this.observer) this.observer.disconnect();
     else this.observer = new MutationObserver(this.handleMutations);
@@ -146,13 +154,9 @@ class Plugin {
     //format existing messages and listen to new ones
     const channels = document.querySelector("." + CLASS_SCROLLER_INNER);
     if (channels) {
-      //existing one
+      //existing ones
       channels.querySelectorAll("." + CLASS_MESSAGE_CONTENT).forEach(this.parseMessage);
-      try {
-        MathJax.typeset();
-      } catch (error) {
-        if (!(error instanceof TypeError)) throw error;
-      }
+      this.typeset();
 
       //new ones
       this.observer.observe(channels, {
@@ -195,7 +199,7 @@ class Plugin {
   };
 
   formatMessage(messageContent) {
-    if (this.parseMessage(messageContent)) MathJax.typeset();
+    if (this.parseMessage(messageContent)) this.typeset();
   }
 
   parseMessage(messageContent) {

@@ -4,7 +4,7 @@
   "author": "QuantumSoul",
   "description": "Renders LaTeX equations using MathJax",
   "keywords": ["LaTeX","MathJax","Better","Discord"],
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "main": "./src/LaTeX.js",
   "scripts": {
