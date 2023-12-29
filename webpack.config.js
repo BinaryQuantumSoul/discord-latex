@@ -7,6 +7,8 @@ const package = require("./package.json");
 const pluginConfig = {
   'name': package["pretty-name"],
   'author': package.author,
+  'authorLink': package.authorLink,
+  'source': package.source,
   'description': package.description,
   'version': package.version,
 };

@@ -2,9 +2,11 @@
   "name": "discord_latex",
   "pretty-name": "LaTeX Renderer",
   "author": "QuantumSoul",
+  "authorLink": "https://github.com/BinaryQuantumSoul",
+  "source": "https://github.com/BinaryQuantumSoul/discord-latex",
   "description": "Renders LaTeX equations using MathJax",
   "keywords": ["LaTeX","MathJax","Better","Discord"],
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "main": "./src/LaTeX.js",
   "scripts": {

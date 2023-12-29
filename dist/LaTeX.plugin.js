@@ -1,8 +1,10 @@
 /**
  * @name LaTeX Renderer
  * @author QuantumSoul
+ * @authorLink https://github.com/BinaryQuantumSoul
+ * @source https://github.com/BinaryQuantumSoul/discord-latex
  * @description Renders LaTeX equations using MathJax
- * @version 1.0.1
+ * @version 1.0.2
  */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
