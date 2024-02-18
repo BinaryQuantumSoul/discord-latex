@@ -4,7 +4,7 @@
  * @authorLink https://github.com/BinaryQuantumSoul
  * @source https://github.com/BinaryQuantumSoul/discord-latex
  * @description Renders LaTeX equations using MathJax
- * @version 1.0.2
+ * @version 1.0.3
  */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
@@ -123,7 +123,6 @@ window.MathJax={
   tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]},
   chtml:{fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}
 };
-window.localStorage={getItem(){},setItem(){},removeItem(){}};
 __webpack_require__(/*! mathjax-full/es5/tex-chtml-full */ "./node_modules/mathjax-full/es5/tex-chtml-full.js");
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];

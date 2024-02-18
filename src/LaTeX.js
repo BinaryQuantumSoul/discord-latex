@@ -2,7 +2,6 @@ window.MathJax={
   tex:{inlineMath:[['mthjxinline','mthjxinlineend']],displayMath:[['mthjxblock','mthjxblockend']]},
   chtml:{fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"}
 };
-window.localStorage={getItem(){},setItem(){},removeItem(){}};
 require('mathjax-full/es5/tex-chtml-full');
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];

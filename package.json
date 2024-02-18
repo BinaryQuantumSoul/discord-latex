@@ -6,7 +6,7 @@
   "source": "https://github.com/BinaryQuantumSoul/discord-latex",
   "description": "Renders LaTeX equations using MathJax",
   "keywords": ["LaTeX","MathJax","Better","Discord"],
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "main": "./src/LaTeX.js",
   "scripts": {
