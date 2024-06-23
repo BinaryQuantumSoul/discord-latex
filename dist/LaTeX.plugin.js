@@ -127,7 +127,7 @@ __webpack_require__(/*! mathjax-full/es5/tex-chtml-full */ "./node_modules/mathj
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];
 const CLASS_MESSAGE_LIST_ITEM = BdApi.Webpack.getByKeys("messageListItem")["messageListItem"];
-const CLASS_MESSAGE_CONTENT = BdApi.Webpack.getByKeys("messageEditorCompact", "messageContent")["messageContent"];
+const CLASS_MESSAGE_CONTENT = BdApi.Webpack.getByKeys('threadMessageAccessoryContentLeadingIcon')["messageContent"]
 
 class Plugin {
   observer = null;
@@ -207,7 +207,7 @@ class Plugin {
     let containsTex = false;
 
     //strips code blocks and change brackets
-    messageContent.querySelectorAll("code.inline").forEach((codeElement) => {
+    messageContent.querySelectorAll("code").forEach((codeElement) => {
       const codeText = codeElement.innerHTML;
 
       if (codeText.startsWith("$$") && codeText.endsWith("$$")) {

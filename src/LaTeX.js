@@ -6,7 +6,7 @@ require('mathjax-full/es5/tex-chtml-full');
 
 const CLASS_SCROLLER_INNER = BdApi.Webpack.getByKeys("navigationDescription", "scrollerInner")["scrollerInner"];
 const CLASS_MESSAGE_LIST_ITEM = BdApi.Webpack.getByKeys("messageListItem")["messageListItem"];
-const CLASS_MESSAGE_CONTENT = BdApi.Webpack.getByKeys("messageEditorCompact", "messageContent")["messageContent"];
+const CLASS_MESSAGE_CONTENT = BdApi.Webpack.getByKeys('threadMessageAccessoryContentLeadingIcon')["messageContent"]
 
 export default class Plugin {
   observer = null;
@@ -86,7 +86,7 @@ export default class Plugin {
     let containsTex = false;
 
     //strips code blocks and change brackets
-    messageContent.querySelectorAll("code.inline").forEach((codeElement) => {
+    messageContent.querySelectorAll("code").forEach((codeElement) => {
       const codeText = codeElement.innerHTML;
 
       if (codeText.startsWith("$$") && codeText.endsWith("$$")) {
