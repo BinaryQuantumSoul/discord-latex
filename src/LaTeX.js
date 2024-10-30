@@ -99,6 +99,9 @@ export default class Plugin {
       if ((codeText.startsWith("$$") && codeText.endsWith("$$")) || (codeText.startsWith("\\[") && codeText.endsWith("\\]"))) {
         findCodeElement(codeElement).outerHTML = "<span>mthjxblock" + sanitize(codeText).slice(2, -2) + "mthjxblockend</span>";
         containsTex = true;
+      } else if (codeText.startsWith("\\begin") && codeText.endsWith("}")) {
+        findCodeElement(codeElement).outerHTML = "<span>mthjxblock" + sanitize(codeText) + "mthjxblockend</span>";
+        containsTex = true;
       } else if (codeText.startsWith("$") && codeText.endsWith("$")) {
         findCodeElement(codeElement).outerHTML = "<span>mthjxinline" + sanitize(codeText).slice(1, -1) + "mthjxinlineend</span>";
         containsTex = true;
